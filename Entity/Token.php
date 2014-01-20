@@ -3,6 +3,7 @@
 namespace Kjda\TranslationBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Token
@@ -25,6 +26,8 @@ class Token
      * @var string
      *
      * @ORM\Column(name="token", type="string", length=255)
+     * @Assert\NotBlank(message = "entity.token.empty")
+     * @Assert\Length(min = "1", minMessage="entity.token.length")
      */
     private $token;
 

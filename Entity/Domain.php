@@ -2,6 +2,8 @@
 
 namespace Kjda\TranslationBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,6 +27,8 @@ class Domain
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank(message = "entity.domain.name.empty")
+     * @Assert\Length(min = "1", minMessage="entity.domain.name.length")
      */
     private $name;
 

@@ -63,3 +63,5 @@ app/routing.yml:
 kjda_translation:
     resource: "@KjdaTranslationBundle/Resources/config/routing.yml"
 ```
+
+translation interface: /app_dev.php/kjda_translation

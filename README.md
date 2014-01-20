@@ -36,7 +36,7 @@ assetic:
 
 
 routing.yml:  
-kjda_translation:
-    resource: "@KjdaTranslationBundle/Controller/"
-    type:     annotation
-    prefix:   /kjda_translation
+kjda_translation:  
+    resource: "@KjdaTranslationBundle/Controller/"  
+    type:     annotation  
+    prefix:   /kjda_translation  

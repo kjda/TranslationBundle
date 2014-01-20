@@ -25,3 +25,18 @@ What is missing?
 exporting translations to resource files.  
 importing resource files to the database.  
 a better domain management & domain detection while capturing keys.  
+
+Installation
+============
+
+config_dev.yml:    
+
+assetic:   
+    bundles:        [ KjdaTranslationBundle, AcyouSomeOtherBundle ]  
+
+
+routing.yml:  
+kjda_translation:
+    resource: "@KjdaTranslationBundle/Controller/"
+    type:     annotation
+    prefix:   /kjda_translation

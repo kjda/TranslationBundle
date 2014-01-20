@@ -1,0 +1,81 @@
+{% extends "KjdaTranslationBundle::layout.html.twig" %}
+
+{% block body %}
+<div class="container" id="kjdaTranslationAppWrap">
+    <div class="row">    
+    <div role="content" class="col-sm-9">
+    </div>
+    <div role="sidebar"  class="col-sm-3">
+        
+    </div>
+    </div>
+  </div>
+</div>
+
+<script  id="tmp-language-list" type="text/template">
+  {% raw %}
+  <div  class="well well-sm">
+    <a href="#">Add Language</a>
+  </div>
+  <div  class="well well-sm">
+    {{#if languages.length}}
+      {{#each languages}}
+          <div><a href="#lang/{{id}}" role="languageLink">{{name}}</a></div>
+      {{/each}}
+    {{/if}}
+  </div>
+  {% endraw %}
+</script>
+
+<script  id="tmp-language" type="text/template">
+  {% raw %}
+    <h1>{{name}}</h1>
+    <div role="translations"></div>
+  {% endraw %}
+</script>
+
+<script  id="tmp-language-add" type="text/template">
+  {% raw %}
+  <form id="addLanguage">
+    <h3>Add a new Language</h3>
+    <div class="row">
+        <div class="col-sm-4">
+            <input id="name" type="text" name="name"  class="form-control" placeholder="Language name" />
+        </div>
+        <div class="col-sm-4">
+            <input id="locale" type="text" name="locale" class="form-control"  placeholder="Locale" />
+        </div>
+        <div class="col-sm-4">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+    <div role="status" class="alert" style="margin:10px;display:none;"></div>
+  </form>
+  {% endraw %}  
+</script>
+
+<script  id="tmp-translation" type="text/template">
+  {% raw %}
+      {{domain}}: {{token}}<br />
+      <textarea role="content" class="form-control">{{content}}</textarea>
+      <div class="clearfix" style="margin-bottom:20px;">
+      <a role="saveBtn" class=" pull-right">Save</a>
+      <div role="status" class="pull-left"></div>
+      </div>
+  {% endraw %}
+</script>
+
+{% endblock%}
+
+{% block javascripts %}
+<script type="text/javascript">
+
+$(function(){
+    
+    var app = new _KjdaTranslation('#kjdaTranslationAppWrap');
+    app.start(function() {
+        Backbone.history.start();
+    });
+});
+</script>
+{% endblock %}

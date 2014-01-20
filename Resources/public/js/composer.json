@@ -1,0 +1,11 @@
+{
+  "name": "kjdaTranslation",
+  "require": {
+        "components/jquery": "1.9.*",
+        "components/handlebars.js": "*",
+        "components/backbone": "1.1.0",
+        "components/underscore": "1.5.2",
+        "components/bootstrap": "3.0.3",
+        "powmedia/backbone-forms": "v0.14.0"
+    }
+}

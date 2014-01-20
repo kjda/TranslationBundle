@@ -1,0 +1,30 @@
+{
+    "name":        "kjda/translation-bundle",
+    "type":        "symfony-bundle",
+    "description": "Manage your symfony2 translations easily",
+    "keywords":    ["symfony2", "bundle", "translation"],
+    "homepage":    "http://github.com/kjda/KjdaTranslationBundle",
+    "license":     "MIT",
+
+    "authors": [
+        {
+            "name": "Khaled Jouda",
+            "homepage": "https://github.com/kjda/KjdaTranslationBundle"
+        }
+    ],
+
+    "require": {
+        "php":                      ">=5.3.2",
+        "symfony/framework-bundle": ">=2.4.0"
+    },
+
+    "minimum-stability": "dev",
+
+    "autoload": {
+        "psr-0": {
+            "Kjda\\KjdaTranslationBundle": ""
+        }
+    },
+
+    "target-dir": "Kjda/KjdaTranslationBundle"
+}

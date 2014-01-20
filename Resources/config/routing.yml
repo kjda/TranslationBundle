@@ -1,0 +1,4 @@
+kjda_translation:
+    resource: "@KjdaTranslationBundle/Controller/"
+    type:     annotation
+    prefix:   /kjda_translation

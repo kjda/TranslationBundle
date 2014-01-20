@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="kjda_translator.class">Kjda\TranslationBundle\Translation\Translator</parameter>
+        <parameter key="kjda_translation_service.class">Kjda\TranslationBundle\EntityService\TranslationService</parameter>
+    </parameters>
+  
+    <services>
+        
+        <service id="kjda_translation_service"  class="%kjda_translation_service.class%">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+        </service>
+    
+        <service id="kjda_translator"  class="%kjda_translator.class%">
+            <call method="setTranslationService">
+                <argument type="service" id="kjda_translation_service" />
+            </call>
+        </service>
+    
+    </services>
+      
+</container>

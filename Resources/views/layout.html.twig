@@ -1,0 +1,47 @@
+{% spaceless %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}{% endblock %}</title>
+ {% stylesheets 
+    '@KjdaTranslationBundle/Resources/public/js/components/bootstrap/css/bootstrap.min.css' 
+    '@KjdaTranslationBundle/Resources/public/css/styles.css' 
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+  {% endstylesheets %}
+
+{% block stylesheets %}{% endblock %}
+  </head>
+  <body>
+    <header id="header" class="clearfix navbar  navbar-inverse"  >
+        <div class="container">
+          <br>
+            <a href="#">KjdaTranslation</a>
+            | <a href="/">Site</a>
+        </div>
+      </header>
+    
+    <section style="margin-top: 60px;">
+        {% block body %}{% endblock %}
+    </section>
+      <script type="text/javascript">
+          var config = {
+        baseUrl: '/kjda_translation'
+    };
+
+</script>
+      {% javascripts
+        '@KjdaTranslationBundle/Resources/public/js/components/jquery/jquery.min.js'
+        '@KjdaTranslationBundle/Resources/public/js/components/underscore/underscore-min.js'
+        '@KjdaTranslationBundle/Resources/public/js/components/backbone/backbone-min.js'
+        '@KjdaTranslationBundle/Resources/public/js/components/handlebars/handlebars.js'
+        '@KjdaTranslationBundle/Resources/public/js/components/bootstrap/js/bootstrap.js' 
+        '@KjdaTranslationBundle/Resources/public/js/app.js' 
+         %}
+    <script src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+      {% block javascripts %}{% endblock %}
+  </body>
+  
+</html>
+{% endspaceless %}

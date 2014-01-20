@@ -3,9 +3,10 @@
 
 A symfony2 translation bundle 
 
-### Goal
+### Goals
 
- Easier Testing &amp; Translation management
+ * Translation management
+ * Easier Testing
 
 ### Warning
 

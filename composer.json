@@ -3,13 +3,13 @@
     "type":        "symfony-bundle",
     "description": "Manage your symfony2 translations easily",
     "keywords":    ["symfony2", "bundle", "translation"],
-    "homepage":    "http://github.com/kjda/KjdaTranslationBundle",
+    "homepage":    "http://github.com/kjda/TranslationBundle",
     "license":     "MIT",
 
     "authors": [
         {
             "name": "Khaled Jouda",
-            "homepage": "https://github.com/kjda/KjdaTranslationBundle"
+            "homepage": "https://github.com/kjda/TranslationBundle"
         }
     ],
 
@@ -26,5 +26,5 @@
         }
     },
 
-    "target-dir": "Kjda/KjdaTranslationBundle"
+    "target-dir": "Kjda/TranslationBundle"
 }

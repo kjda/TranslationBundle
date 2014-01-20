@@ -22,6 +22,6 @@ When enabled it will catch all your translation keys and store them in the datab
 
 What is missing?
 ===============
-exporting translations to resource files
-importing resource files to the database
-a better domain management & domain detection while capturing keys
+exporting translations to resource files.  
+importing resource files to the database.  
+a better domain management & domain detection while capturing keys.  

@@ -11,11 +11,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller {
 
     /**
+     * Translation UI
+     * 
      * @Route("/", name="_kjda_translatoin_route_home")
      * @Template()
      */
     public function indexAction() {
-        
         return array();
     }
 
@@ -36,7 +37,7 @@ class DefaultController extends Controller {
 
     /**
      * @Route("/api/languages")
-     * @Method({"POST"})
+     * @Method("POST")
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function newLanguage() {
@@ -44,9 +45,10 @@ class DefaultController extends Controller {
             $params = $this->getJsonRequestPayload();
             $service = $this->getService();
             $language = new \Kjda\TranslationBundle\Entity\Language;
-            $language->setName($params['name'])->setLocale($params['locale']);
-            $lang = $service->saveEntity($language);
-            return new JsonResponse($lang->toArray());
+            $language->setName($params['name'])
+                     ->setLocale($params['locale']);
+            $language = $service->saveEntity($language);
+            return new JsonResponse($language->toArray());
         } catch (\Exception $e) {
             return new JsonResponse("Can not add language", 406);
         }
@@ -96,7 +98,7 @@ class DefaultController extends Controller {
         $params = $this->getJsonRequestPayload();
         try {
             $translation = $this->getService()
-                    ->editTranslation($translationId, $params['content']);
+                                ->editTranslation($translationId, $params['content']);
         } catch (\Exception $e) {
             return new JsonResponse($e->getMessage(), 406);
         }

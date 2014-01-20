@@ -34,18 +34,24 @@ Add the following to your composer.json
    "require": "kjda/translation-bundle": "dev-master"
 ```
 
+Register bundle in app/AppKernel.php:  
+```
+$bundles = array(
+      .....,
+      new Kjda\TranslationBundle\KjdaTranslationBundle(),
+);
+```
 
 
-config_dev.yml:    
+
+app/config_dev.yml:    
 ```
 assetic:   
     bundles:        [ KjdaTranslationBundle, AcyouSomeOtherBundle ]  
 ```
 
-routing.yml:  
+app/routing.yml:  
 ```
-kjda_translation:  
-    resource: "@KjdaTranslationBundle/Controller/"  
-    type:     annotation  
-    prefix:   /kjda_translation  
+kjda_translation:
+    resource: "@KjdaTranslationBundle/Resources/config/routing.yml"
 ```

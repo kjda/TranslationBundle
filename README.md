@@ -27,7 +27,13 @@ exporting translations to resource files.
 importing resource files to the database.  
 a better domain management & domain detection while capturing keys.  
 
-#### Installation
+#### Installation & Configuration
+
+Add the following to your composer.json
+```
+   "require": "kjda/translation-bundle": "dev-master"
+```
+
 
 
 config_dev.yml:    

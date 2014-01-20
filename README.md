@@ -31,8 +31,16 @@ a better domain management & domain detection while capturing keys.
 
 Add the following to your composer.json
 ```
-   "require": "kjda/translation-bundle": "dev-master"
+   "require": { 
+         "kjda/translation-bundle": "dev-master" 
+   }
 ```
+
+then 
+```
+php composer.phar update kjda/translation-bundle
+```
+
 
 Register bundle in app/AppKernel.php:  
 ```
